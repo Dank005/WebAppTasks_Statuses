@@ -1,0 +1,32 @@
+﻿@model WebAppTasks_Statuses.Models.Tasks
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add Task</title>
+</head>
+<body>
+    @using (Html.BeginForm("AddOrEdit", "Tasks", FormMethod.Post))
+    {
+    <table>
+        <tr>
+            <td></td>
+            <td style="text-decoration:underline">Add Task</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Status_ID)</td>
+            <td>@Html.DropDownListFor(model => model.Status_ID, new SelectList(Model.StatusesCollection, "Status_ID", "Status_name"), "Select")</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" name="name" value="Submit" /></td>
+        </tr>
+    </table>
+    }
+</body>
+</html>

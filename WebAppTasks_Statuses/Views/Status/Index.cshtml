@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebAppTasks_Statuses.Models.Statuses>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Status_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status_name)
+        </td>
+        
+    </tr>
+}
+
+</table>
