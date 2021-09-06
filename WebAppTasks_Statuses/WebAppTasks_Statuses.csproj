@@ -129,7 +129,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
-    <Compile Include="Controllers\TasksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -207,7 +206,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Tasks\AddOrEdit.cshtml" />
     <Content Include="Views\Task\Index.cshtml" />
     <Content Include="Views\Status\Index.cshtml" />
     <Content Include="Views\Task\Create.cshtml" />

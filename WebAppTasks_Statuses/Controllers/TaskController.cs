@@ -20,17 +20,17 @@ namespace WebAppTasks_Statuses.Controllers
         }
 
         // GET: Task/Create
-        public ActionResult Create()//в WORK пусто
+        public ActionResult Create(int id=0)//в WORK пусто
         {
-            //Tasks taskModel = new Tasks();
-            //using (DbModels db = new DbModels())
-            //{
-            //    if (id != 0)
-            //        taskModel = db.Tasks.Where(x => x.ID == id).FirstOrDefault();
-            //    taskModel.StatusesCollection = db.Statuses.ToList<Statuses>();
-            //}
-            //return View(taskModel);
-            return View();////////////////////////// WORK
+            Tasks taskModel = new Tasks();
+            using (DbModels db = new DbModels())
+            {
+                if (id != 0)
+                    taskModel = db.Tasks.Where(x => x.ID == id).FirstOrDefault();
+                taskModel.StatusesCollection = db.Statuses.ToList<Statuses>();
+            }
+            return View(taskModel);
+            //return View();////////////////////////// WORK
         }
 
         // POST: Task/Create
@@ -59,10 +59,17 @@ namespace WebAppTasks_Statuses.Controllers
         public ActionResult Edit(int id)
         {
             Tasks taskModel = new Tasks();
-            using (DbModels dbModel = new DbModels())
+            using (DbModels db = new DbModels())
             {
-                return View(dbModel.Tasks.Where(x => x.ID == id).FirstOrDefault());
+                if (id != 0)
+                    taskModel = db.Tasks.Where(x => x.ID == id).FirstOrDefault();
+                taskModel.StatusesCollection = db.Statuses.ToList<Statuses>();
             }
+            return View(taskModel);
+            //using (DbModels dbModel = new DbModels())
+            //{
+            //    return View(dbModel.Tasks.Where(x => x.ID == id).FirstOrDefault());
+            //}
         }
 
         // POST: Task/Edit/5
